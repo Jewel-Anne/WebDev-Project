@@ -1,0 +1,398 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(..assets/img/revampimg/4c-view-out.png); */
+    background-color: #06927193;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    max-width: 650px;
+    padding: 28px;
+    margin: 0 28px;
+    box-shadow: 0 15px 20px #ABB2B9;
+    background-color: white;
+}
+
+h2{
+    font-size: 26px;
+    font-weight: 600;
+    text-align: left;
+    color: #2f4f4f;
+    padding-bottom: 8px;
+    border-bottom: 1px solid silver;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.input-field{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.input-field:nth-child(2n){
+    justify-content: end;
+}
+
+.input-field label, .work-title, 
+.upload-title, .cover-title, 
+.veteran-title, .gender-title,
+.additional-title, .select-city,
+.select-region{
+    width: 95%;
+    color: #2f4f4f;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.work-title,.upload-title, .cover-title, 
+.veteran-title, .gender-title,
+.additional-title, .select-city,
+.select-region{
+    font-size: 16px;
+}
+
+.upload-title, .cover-title, .additional-title{
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.upload-title{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.file-upload input[type="file"]{
+    display: none;
+}
+
+.file-upload{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.file-upload input[type="file"]:focus + .file-upload::before{
+    outline: solid 2px #2e9cdf;
+}
+
+.file-upload input[type="file"]:valid + .file-upload::before{
+    content: attr(data-file-name);
+}
+
+.file-upload:hover{
+    background-color: #e5e5e5;
+}
+
+.input-field input{
+    height: 40px;
+    width: 95%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.select-city{
+    margin-bottom: 20px;
+    width: 282px;
+}
+
+.select-region{
+    margin-bottom: 20px;
+    width: 282px;
+}
+
+.select-city label{
+    display: block;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.select-region label{
+    display: block;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.select-city select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.select-city option[value=""]{
+    text-align: left;
+}
+
+.select-region select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.select-region option[value=""]{
+    text-align: left;
+}  
+
+.work-type{
+    color: grey;
+    padding: 10px;
+}
+
+.work-type label{
+    padding: 0 35px 0 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.work-type label, .work-type input{
+    cursor: pointer;
+}
+
+.work-type input[type="radio"],
+.work-type input[type="checkbox"]{
+    display: none;
+}
+
+.work-type label::before{
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.work-type input[type="radio"]:checked + label::before,
+.work-type input[type="checkbox"]:checked + label::before{
+    background-color: #2e9cdf;
+}
+
+.work-type input[type="checkbox"]:checked + label::before{
+    content: '\2713';
+    text-align: center;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Style the dropdown list */
+.input-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Remove default arrow in some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('arrow-down.png') no-repeat right; /* Add custom arrow */
+    background-size: 12px;
+}
+
+.input-field option[value=""] {
+    text-align: left;
+}
+
+/* Privacy and Consent */
+.privacy-consent {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.privacy-consent p {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.privacy-consent label {
+    display: block;
+    padding-left: 30px;
+    position: relative;
+}
+
+.privacy-consent input[type="checkbox"] {
+    display: none;
+}
+
+.privacy-consent label::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: -30px;
+    margin-right: 5px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.privacy-consent input[type="checkbox"]:checked + label::before {
+    background-color: #2e9cdf;
+    content: '\2713';
+    text-align: center;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.privacy-consent input[type="checkbox"] + label {
+    display: inline;
+}
+
+.button-container button{
+    width: 590px;
+    margin-top: 10px;
+    padding: 10px;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgb(8, 228, 173), rgb(25, 158, 85));
+    cursor: pointer;
+}
+
+.button-container button:hover{
+    background-image: linear-gradient(to right, rgb(8, 228, 173), rgb(25, 158, 85));
+}
+
+.hidden{
+    display: none;
+}
+
+@media(max-width:600px){
+    .container{
+        min-width: 280px;
+    }
+    .content{
+        max-height: 380px;
+        overflow: auto;
+    }
+    .input-field{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+    .input-field:nth-child(2n){
+        justify-content: space-between;
+    }
+    .work-type{
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+    }
+}
+
+/* ... Previous CSS styles ... */
+
+.work-type {
+    color: grey;
+    padding: 10px;
+}
+
+.work-type label {
+    padding: 0 35px 0 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.work-type input[type="radio"] {
+    display: none;
+}
+
+.work-type label::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.work-type input[type="radio"]:checked + label::before {
+    background-color: #2e9cdf;
+}
+
+/* Style the checkbox */
+.work-type input[type="checkbox"] {
+    display: none;
+}
+
+.work-type label::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.work-type input[type="checkbox"]:checked + label::before {
+    background-color: #2e9cdf;
+    content: '\2713';
+    text-align: center;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Style the dropdown list */
+.input-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Remove default arrow in some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('arrow-down.png') no-repeat right; /* Add custom arrow */
+    background-size: 12px;
+}
+
+.input-field option[value=""] {
+    text-align: left;
+}
